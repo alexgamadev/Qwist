@@ -12,35 +12,35 @@ public interface IChecklistRepository
     /// Gets all checklists 
     /// </summary>
     /// <returns>An enumerable of checklists</returns>
-    public Task<IEnumerable<Checklist>> GetAllChecklistsAsync();
+    public Task<IEnumerable<Checklist>> GetAllAsync();
     
     /// <summary>
     /// Gets a single checklist with a specified id
     /// </summary>
     /// <param name="id">The checklist id</param>
     /// <returns>A single checklist or null</returns>
-    public Task<Checklist?> GetChecklistAsync(Guid id);
+    public Task<Checklist> GetAsync(Guid id);
 
     /// <summary>
     /// Creates a checklist
     /// </summary>
     /// <param name="checklist">The checklist object</param>
     /// <returns></returns>
-    public Task CreateChecklistAsync(Checklist checklist);
+    public Task CreateAsync(Checklist checklist);
 
     /// <summary>
     /// Updates an entire checklist
     /// </summary>
     /// <param name="checklist">The checklist object</param>
     /// <returns></returns>
-    public Task UpdateChecklistAsync(Checklist checklist);
+    public Task UpdateAsync(Checklist checklist);
 
     /// <summary>
     /// Removes a checklist with a specified id
     /// </summary>
     /// <param name="id">The checklist id</param>
     /// <returns></returns>
-    public Task RemoveChecklistAsync(Guid id);
+    public Task RemoveAsync(Guid id);
 
     /// <summary>
     /// Partially updates a checklist
@@ -48,5 +48,5 @@ public interface IChecklistRepository
     /// <param name="id">The checklist id</param>
     /// <param name="patch">The checklist object to patch with</param>
     /// <returns></returns>
-    public Task PatchChecklistAsync(Guid id, Checklist patch);
+    public Task PatchAsync(Guid id, Checklist patch);
 }
