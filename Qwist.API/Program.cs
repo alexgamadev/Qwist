@@ -1,4 +1,5 @@
 using Qwist.API.DataAccess.DatabaseSettings;
+using Qwist.API.DataAccess.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +13,8 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.Configure<ChecklistDatabaseSettings>(
     builder.Configuration.GetSection("ChecklistsDatabase"));
+
+builder.Services.AddSingleton<IChecklistRepository, DbChecklistRepository>();
 
 var app = builder.Build();
 
