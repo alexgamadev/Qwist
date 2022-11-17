@@ -35,20 +35,20 @@ public class DbChecklistRepository : IChecklistRepository
     }
 
     /// <inheritdoc/>
-    public async Task<Checklist> GetAsync(Guid id)
+    public async Task<Checklist> GetAsync(string id)
     {
         var item = await _checklistCollection.Find(item => item.Id == id).FirstOrDefaultAsync();
         return item;
     }
 
     /// <inheritdoc/>
-    public Task PatchAsync(Guid id, Checklist patch)
+    public Task PatchAsync(string id, Checklist patch)
     {
         throw new NotImplementedException();
     }
 
     /// <inheritdoc/>
-    public async Task RemoveAsync(Guid id)
+    public async Task RemoveAsync(string id)
     {
         await _checklistCollection.FindOneAndDeleteAsync(item => item.Id == id);
     }

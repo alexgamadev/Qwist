@@ -19,7 +19,7 @@ public interface IChecklistRepository
     /// </summary>
     /// <param name="id">The checklist id</param>
     /// <returns>A single checklist or null</returns>
-    public Task<Checklist> GetAsync(Guid id);
+    public Task<Checklist> GetAsync(string id);
 
     /// <summary>
     /// Creates a checklist
@@ -40,7 +40,7 @@ public interface IChecklistRepository
     /// </summary>
     /// <param name="id">The checklist id</param>
     /// <returns></returns>
-    public Task RemoveAsync(Guid id);
+    public Task RemoveAsync(string id);
 
     /// <summary>
     /// Partially updates a checklist
@@ -48,5 +48,5 @@ public interface IChecklistRepository
     /// <param name="id">The checklist id</param>
     /// <param name="patch">The checklist object to patch with</param>
     /// <returns></returns>
-    public Task PatchAsync(Guid id, Checklist patch);
+    public Task PatchAsync(string id, Checklist patch);
 }
