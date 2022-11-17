@@ -1,4 +1,5 @@
-﻿using MongoDB.Bson.Serialization.Attributes;
+﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 
 namespace Qwist.API.DataAccess.Models;
 
@@ -11,7 +12,7 @@ public class Checklist
     /// The checklist id
     /// </summary>
     [BsonId]
-    public Guid Id { get; set; }
+    public string Id { get; set; } = String.Empty;
 
     /// <summary>
     /// The name of the checklist
@@ -23,7 +24,8 @@ public class Checklist
     /// The id of the checklist creator's account
     /// </summary>
     [BsonElement]
-    public Guid CreatorId { get; set; }
+    [BsonRepresentation(BsonType.ObjectId)]
+    public string CreatorId { get; set; } = String.Empty;
 
     /// <summary>
     /// The list of checklist items
