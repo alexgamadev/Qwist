@@ -14,7 +14,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.Configure<ChecklistDatabaseSettings>(
     builder.Configuration.GetSection("ChecklistsDatabase"));
 
-builder.Services.AddSingleton<IChecklistRepository, DbChecklistRepository>();
+ builder.Services.AddSingleton<IChecklistRepository, DbChecklistRepository>();
 
 var app = builder.Build();
 

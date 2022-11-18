@@ -24,7 +24,14 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build --no-restore -warnaserror
+    - name: Run .NET Code Analysis
+      uses: dotnet/code-analysis@v1
+      id: code-analysis
+      with:
+        solution: Qwist.sln
+        build-breaking: true
+        all-categories: all
     - name: Test
-      run: dotnet test
+      run: dotnet test -warnaserror
       working-directory: ./src/Checklists.Tests
