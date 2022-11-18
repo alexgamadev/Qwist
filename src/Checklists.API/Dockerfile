@@ -19,4 +19,4 @@ RUN dotnet publish -c Development -o /app/publish --use-current-runtime --self-c
 FROM runtime-env AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "Qwist.API.dll"]
+ENTRYPOINT ["dotnet", "Checklists.API.dll"]
