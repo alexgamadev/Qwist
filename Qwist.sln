@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qwist.API", "Qwist.API\Qwist.API.csproj", "{554F201F-FCE6-40D4-87F6-DC5FCC2CF428}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Qwist.API", "Qwist.API\Qwist.API.csproj", "{554F201F-FCE6-40D4-87F6-DC5FCC2CF428}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qwist.Tests", "Qwist.Tests\Qwist.Tests.csproj", "{7F3D79E2-21B8-40D7-B49C-D1B7694F53A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Qwist.Tests", "Qwist.Tests\Qwist.Tests.csproj", "{7F3D79E2-21B8-40D7-B49C-D1B7694F53A9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
