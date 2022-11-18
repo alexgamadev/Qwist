@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Checklists.Tests;
+
+// Todo: remove when other actual tests added
 public class Class1
 {
     [Fact]
@@ -15,15 +17,5 @@ public class Class1
         // Act
         // Assert
         Assert.True(boolean);
-    }
-
-    [Fact]
-    public void InitialTest_InputIsFalse_ReturnsFalse()
-    {
-        // Arrange
-        bool boolean = true;
-        // Act
-        // Assert
-        Assert.False(boolean);
     }
 }
