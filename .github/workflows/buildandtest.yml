@@ -26,7 +26,7 @@ jobs:
     - name: Build
       run: dotnet build --no-restore -warnaserror
     - name: Run .NET Code Analysis
-      uses: dotnet/code-analysis@v1
+      uses: dotnet/code-analysis@main
       id: code-analysis
       with:
         solution: Qwist.sln
