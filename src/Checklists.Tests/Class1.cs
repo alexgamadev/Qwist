@@ -16,4 +16,14 @@ public class Class1
         // Assert
         Assert.True(boolean);
     }
+
+    [Fact]
+    public void InitialTest_InputIsFalse_ReturnsFalse()
+    {
+        // Arrange
+        bool boolean = true;
+        // Act
+        // Assert
+        Assert.False(boolean);
+    }
 }
