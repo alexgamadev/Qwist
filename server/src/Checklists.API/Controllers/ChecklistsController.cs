@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Checklists.API.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ActionConstraints;
 using MongoDB.Bson;
@@ -58,14 +59,14 @@ public class ChecklistsController : ControllerBase
     /// <param name="newChecklist">The checklist data to use</param>
     /// <returns>An action result</returns>
     [HttpPost]
-    public async Task<ActionResult> CreateAsync(Checklist newChecklist)
+    public async Task<ActionResult> CreateAsync(ChecklistCreateDto newChecklist)
     {
         // Temporary before Dtos created
         var checklist = new Checklist()
         {
             Id = ObjectId.GenerateNewId().ToString(),
             Name = newChecklist.Name,
-            CreatorId = ObjectId.GenerateNewId().ToString(),
+            CreatorId = newChecklist.CreatorId,
             Items = newChecklist.Items
         };
 

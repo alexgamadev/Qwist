@@ -25,11 +25,11 @@ public class Checklist
     /// </summary>
     [BsonElement]
     [BsonRepresentation(BsonType.ObjectId)]
-    public string CreatorId { get; set; } = String.Empty;
+    public string? CreatorId { get; set; } = null;
 
     /// <summary>
     /// The list of checklist items
     /// </summary>
     [BsonElement]
-    public List<bool> Items { get; set; } = new List<bool>();
+    public List<ChecklistItem> Items { get; set; } = new List<ChecklistItem>();
 }
