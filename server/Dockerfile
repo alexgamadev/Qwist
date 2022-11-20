@@ -4,20 +4,19 @@ WORKDIR /app
 EXPOSE 443
 EXPOSE 80
 
-# Get .NET SDK and restore projects
+# Get .NET SDK, set dev environment and restore projects
 FROM mcr.microsoft.com/dotnet/sdk:6.0 as build-env
 WORKDIR /build
 COPY Qwist.sln ./Qwist.sln
 COPY src/Checklists.API/Checklists.API.csproj ./src/Checklists.API/Checklists.API.csproj
 COPY src/Checklists.Tests/Checklists.Tests.csproj ./src/Checklists.Tests/Checklists.Tests.csproj
-# Use local nuget packages for now because bad internet
-RUN dotnet restore --source C:\Users\alex.gama\.nuget\packages\ --use-current-runtime --verbosity diagnostic
+RUN dotnet restore
 
-# Test and publish project
+# Build/publish project
 FROM build-env AS publish
 COPY . .
 RUN dotnet test ./src/Checklists.Tests/Checklists.Tests.csproj -c Development
-RUN dotnet publish ./src/Checklists.API/Checklists.API.csproj -c Development -o /app/publish --self-contained false --no-restore --use-current-runtime 
+RUN dotnet publish ./src/Checklists.API/Checklists.API.csproj -c Development -o /app/publish --self-contained false --no-restore
 
 # Create final image using runtime (smaller) and run
 FROM runtime-env AS final

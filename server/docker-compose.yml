@@ -18,7 +18,7 @@ services:
       - 27017:27017
     restart: always
     volumes:
-      - ./db/mongo_database_container:/data/db
+      - ./mongo_database_container:/data/db
 
 volumes:
   mongo_database_container:
